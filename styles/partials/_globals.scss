@@ -3,10 +3,44 @@
 
 h1 {
   font-size: 1.5rem;
-  line-height: 32px;
+  line-height: 2rem;
+  font-weight: bold;
 
   @include tablet-and-desktop {
     font-size: 3.75rem;
     line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+
+  @include tablet-and-desktop {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+
+  @include tablet-and-desktop {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: medium;
+
+  @include tablet-and-desktop {
+    font-size: 1.5rem;
+    line-height: 1.375rem;
   }
 }
