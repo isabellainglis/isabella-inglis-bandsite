@@ -97,15 +97,48 @@
   }
 
   &__img-container {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 }
 
 .footer {
   background-color: $primary-color;
   color: $tertiary-color;
+  padding: 1rem;
+
+  &__section-heading {
+    padding: 1rem 0;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 0.5rem;
+  }
 
   &__icon {
-    width: 20px;
+    width: 1.7rem;
+
+    &--small {
+      width: 1rem;
+    }
+  }
+
+  &__subheader {
+    padding: 15px 0;
+  }
+
+  &__bottom-section {
+    padding-top: 3rem;
+  }
+
+  &__logo {
+    max-height: 1.25rem;
+    max-width: 7.5rem;
+  }
+
+  &__copyright {
+    padding: 0.75rem 0;
   }
 }
