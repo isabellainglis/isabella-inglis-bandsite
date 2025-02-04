@@ -23,17 +23,6 @@ h2 {
   }
 }
 
-p {
-  font-size: 0.8rem;
-  line-height: 1.125rem;
-  font-weight: normal;
-
-  @include tablet-and-desktop {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-}
-
 h3 {
   font-size: 0.875rem;
   line-height: 1.375rem;
@@ -42,5 +31,16 @@ h3 {
   @include tablet-and-desktop {
     font-size: 1.5rem;
     line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+
+  @include tablet-and-desktop {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
