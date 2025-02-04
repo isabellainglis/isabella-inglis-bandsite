@@ -6,12 +6,41 @@
 
 .nav {
   background-color: $primary-color;
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding: 0.75rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    &-item {
+      padding: 10px;
+      width: 50%;
+
+      &--active {
+        font-weight: bold;
+        border-bottom: 0.25rem solid $tertiary-color;
+      }
+
+      &-link {
+        color: $tertiary-color;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 35vh;
@@ -19,8 +48,10 @@
   align-items: center;
   padding-left: 1rem;
 
-  .hero__title {
+  &__title {
     color: $tertiary-color;
+    position: relative;
+    bottom: 1.3rem;
   }
 }
 
@@ -42,7 +73,7 @@ main {
   background-color: $primary-color;
   color: $tertiary-color;
 
-  .footer__icon {
+  &__icon {
     width: 20px;
   }
 }
