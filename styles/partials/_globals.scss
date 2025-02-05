@@ -1,23 +1,26 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-h1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold;
+body {
+  min-width: 236px;
+  color: $primary-color;
+}
 
-  @include tablet-and-desktop {
+h1 {
+  @include text-h1-h2;
+
+  @include tablet-and-above {
     font-size: 3.75rem;
     line-height: 2.75rem;
   }
 }
 
 h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold;
+  @include text-h1-h2;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
 
-  @include tablet-and-desktop {
+  @include tablet-and-above {
     font-size: 2.25rem;
     line-height: 2.75rem;
   }
@@ -27,9 +30,9 @@ h3,
 li {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-weight: medium;
+  font-weight: normal;
 
-  @include tablet-and-desktop {
+  @include tablet-and-above {
     font-size: 1.5rem;
     line-height: 1.375rem;
   }
@@ -40,16 +43,12 @@ p {
   line-height: 1.125rem;
   font-weight: normal;
 
-  @include tablet-and-desktop {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+  @include tablet-and-above {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
 a {
   text-decoration: none;
-}
-
-body {
-  min-width: 236px;
 }

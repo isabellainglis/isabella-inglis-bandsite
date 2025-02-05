@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-@mixin tablet-and-desktop {
+@mixin tablet-and-above {
   @media (min-width: $tablet-breakpoint) {
     @content;
   }
@@ -15,4 +15,15 @@
 @mixin mobile-heading-padding {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
+
+  @include tablet-and-above {
+    padding-top: 3rem;
+    padding-bottom: 2.3rem;
+  }
+}
+
+@mixin text-h1-h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
 }
