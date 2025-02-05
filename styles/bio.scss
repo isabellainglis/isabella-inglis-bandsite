@@ -106,6 +106,12 @@
   color: $tertiary-color;
   padding: 1rem;
 
+  &__section--top {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
   &__section-heading {
     padding: 1rem 0;
   }
@@ -113,8 +119,7 @@
   &__icons {
     display: flex;
     justify-content: space-between;
-    width: 40%;
-    margin-bottom: 0.5rem;
+    width: 33%;
   }
 
   &__icon {
@@ -125,8 +130,21 @@
     }
   }
 
+  &__logo {
+    position: relative;
+    top: 28rem;
+  }
+
+  &__middle-section {
+    padding-bottom: 2rem;
+  }
+
   &__subheader {
     padding: 15px 0;
+
+    &--top {
+      padding-top: 0;
+    }
   }
 
   &__bottom-section {
