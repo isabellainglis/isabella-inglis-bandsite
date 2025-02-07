@@ -18,3 +18,27 @@
   font-style: bold;
   font-weight: 700;
 }
+
+@font-face {
+  font-family: Nunito-alt;
+  src: url(../../assets/fonts/alt-font-files/NunitoSans-Regular.woff2)
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Nunito-alt;
+  src: url(../../assets/fonts/alt-font-files/NunitoSans-Medium.woff2)
+    format("woff2");
+  font-style: medium;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Nunito-alt;
+  src: url(../../assets/fonts/alt-font-files/NunitoSans-Bold.woff2)
+    format("woff2");
+  font-style: bold;
+  font-weight: 700;
+}

@@ -55,6 +55,7 @@
       height: 100%;
       padding: 0.5rem 0 1.5rem;
       margin-right: 3rem;
+      width: 5rem;
     }
 
     @include desktop {
@@ -70,12 +71,22 @@
       @include tablet-and-above {
         width: 5.3rem;
         text-align: center;
+        margin-left: 10px;
       }
+    }
+
+    &:hover {
+      border-bottom: 0.25rem solid $tertiary-color;
+      color: $tertiary-color;
     }
   }
 
   &__link {
     color: $divider-color;
+
+    &:hover {
+      color: $tertiary-color;
+    }
   }
 }
 
@@ -137,16 +148,15 @@
   &__img {
     width: 100%;
     padding-bottom: 1rem;
-    height: 13rem;
-    object-fit: cover;
+    @include image-height(15rem);
 
     @include tablet-and-above {
       padding: 0.5rem 5rem;
+      @include image-height(25rem);
     }
 
     @include desktop {
-      height: 32rem;
-      object-fit: cover;
+      @include image-height(32rem);
       padding-bottom: 1rem;
     }
   }
@@ -260,9 +270,13 @@
   &__img {
     width: 100%;
     padding: 0.5rem 0;
-
+    filter: grayscale(100%);
     @include tablet-and-above {
       width: 31%;
+    }
+
+    &:hover {
+      filter: none;
     }
   }
 }
@@ -386,6 +400,10 @@
     @include tablet-and-above {
       padding-top: 2rem;
     }
+  }
+
+  &__link {
+    color: $tertiary-color;
   }
 
   &__logo {

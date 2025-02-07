@@ -27,3 +27,8 @@
   line-height: 2rem;
   font-weight: bold;
 }
+
+@mixin image-height($height) {
+  height: $height;
+  object-fit: cover;
+}
