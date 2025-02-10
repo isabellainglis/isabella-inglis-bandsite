@@ -6,4 +6,26 @@
 
 .hero {
   background-image: url("../assets/images/hero-shows.jpg");
+  @include hero-image;
+
+  &__overlay {
+    @include hero-overlay;
+    display: block;
+
+    @include tablet-and-above {
+      height: 55vh;
+    }
+
+    @include desktop {
+      height: 70vh;
+    }
+  }
+
+  &__subheading {
+    @include hero-heading;
+  }
+
+  &__title {
+    @include hero-heading;
+  }
 }

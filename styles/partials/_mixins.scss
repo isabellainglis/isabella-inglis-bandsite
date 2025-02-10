@@ -23,7 +23,7 @@
 }
 
 @mixin text-h1-h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 2rem;
   font-weight: bold;
 }
@@ -31,4 +31,30 @@
 @mixin image-height($height) {
   height: $height;
   object-fit: cover;
+}
+
+@mixin hero-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin hero-overlay {
+  background-color: rgba(50, 50, 50, 0.5);
+  width: 100%;
+  height: 30vh;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+@mixin hero-heading {
+  color: $tertiary-color;
+
+  @include tablet-and-above {
+    padding-left: 1.5rem;
+  }
+
+  @include desktop {
+    padding-left: 8rem;
+  }
 }
