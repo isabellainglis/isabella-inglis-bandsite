@@ -52,3 +52,259 @@ p {
 a {
   text-decoration: none;
 }
+
+.nav {
+  background-color: $primary-color;
+
+  @include tablet-and-above {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem 10rem 0.3rem;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding: 0.75rem;
+
+    @include tablet-and-above {
+      height: 3rem;
+      width: 10rem;
+      margin: 0;
+    }
+
+    @include desktop {
+      margin-right: 1rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    @include tablet-and-above {
+      padding-left: 3rem;
+    }
+  }
+
+  &__list-item {
+    padding: 0.6rem;
+    width: 50%;
+
+    @include tablet-and-above {
+      font-size: 1rem;
+      height: 100%;
+      padding: 0.5rem 0 1.5rem;
+      margin-right: 3rem;
+      width: 5rem;
+    }
+
+    @include desktop {
+      height: 108%;
+      font-size: 1rem;
+    }
+
+    &--active {
+      font-weight: bold;
+      border-bottom: 0.25rem solid $tertiary-color;
+      color: $tertiary-color;
+
+      @include tablet-and-above {
+        width: 5.3rem;
+        text-align: center;
+        margin-left: 10px;
+      }
+    }
+
+    &:hover {
+      border-bottom: 0.25rem solid $tertiary-color;
+      color: $tertiary-color;
+    }
+  }
+
+  &__link {
+    color: $divider-color;
+
+    &:hover {
+      color: $tertiary-color;
+    }
+  }
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__overlay {
+    background-color: rgba(50, 50, 50, 0.5);
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+
+    @include tablet-and-above {
+      height: 55vh;
+    }
+
+    @include desktop {
+      height: 70vh;
+    }
+  }
+
+  &__title {
+    color: $tertiary-color;
+
+    @include tablet-and-above {
+      padding-left: 1.5rem;
+    }
+
+    @include desktop {
+      padding-left: 8rem;
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  color: $tertiary-color;
+  padding: 1.5rem;
+
+  @include tablet-and-above {
+    padding: 2.5rem;
+  }
+
+  @include desktop {
+    padding: 3rem 8rem;
+  }
+
+  &__top-section {
+    @include tablet-and-above {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &__section-heading {
+    padding: 0.5rem 0;
+    min-width: 14.3rem;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 8rem;
+    padding-top: 1rem;
+
+    @include tablet-and-above {
+      justify-content: left;
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+
+  &__icon {
+    width: 1.7rem;
+
+    @include tablet-and-above {
+      margin-left: 2rem;
+    }
+
+    &--small {
+      width: 1rem;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    top: 30rem;
+    width: 120px;
+    height: 20px;
+
+    @include tablet-and-above {
+      top: auto;
+    }
+  }
+
+  &__middle-section {
+    padding-bottom: 2rem;
+    min-width: 14.5rem;
+
+    @include tablet-and-above {
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      padding-bottom: 0;
+      font-weight: light;
+    }
+
+    @include desktop {
+      justify-content: left;
+    }
+  }
+
+  &__text-container {
+    text-align: left;
+    padding: 0.5rem 0;
+
+    @include desktop {
+      padding-right: 5rem;
+    }
+  }
+
+  &__subheader {
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 0.875rem;
+
+    @include tablet-and-above {
+      padding: 0.5rem 0 1rem 0;
+    }
+
+    &--top {
+      padding-top: 0;
+
+      @include tablet-and-above {
+        padding: 0.5rem 0 1rem 0;
+      }
+    }
+  }
+
+  &__text {
+    @include tablet-and-above {
+      line-height: 1.25rem;
+    }
+  }
+
+  &__bottom-section {
+    padding-top: 3rem;
+
+    @include tablet-and-above {
+      padding-top: 2rem;
+    }
+  }
+
+  &__link {
+    color: $tertiary-color;
+  }
+
+  &__logo {
+    max-height: 1.25rem;
+    max-width: 7.5rem;
+  }
+
+  &__copyright {
+    padding: 0.75rem 0;
+  }
+}
