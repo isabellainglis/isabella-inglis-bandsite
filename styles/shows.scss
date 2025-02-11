@@ -29,3 +29,38 @@
     @include hero-heading;
   }
 }
+
+.shows {
+  &__shows-section {
+    margin-bottom: 1.5rem;
+  }
+
+  &__heading {
+    padding: 3rem 1.5rem 1rem;
+  }
+
+  &__show-container {
+    padding: 1.5rem 1.5rem;
+    border-bottom: solid 1px $divider-color;
+  }
+
+  &__subheading {
+    color: $secondary-color;
+    font-size: 1rem;
+  }
+
+  &__info {
+    padding: 0.8rem 0 1.2rem 0;
+    font-size: 1.125rem;
+  }
+
+  &__info--highlight {
+    font-weight: bold;
+  }
+
+  &__btn {
+    @include button;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

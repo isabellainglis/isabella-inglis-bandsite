@@ -34,7 +34,7 @@
   }
 
   &__heading {
-    @include mobile-heading-padding;
+    @include heading-padding;
 
     @include tablet-and-above {
       padding-left: 2rem;
@@ -144,7 +144,7 @@
   }
 
   &__heading {
-    @include mobile-heading-padding;
+    @include heading-padding;
     padding-bottom: 0.5rem;
 
     @include tablet-and-above {

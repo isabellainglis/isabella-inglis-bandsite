@@ -1,37 +1,43 @@
 displayShow = (show) => {
   const showContainer = document.createElement("div");
-  showContainer.classList.add("show__show-container");
+  showContainer.classList.add("shows__show-container");
   showsSection.appendChild(showContainer);
 
   const dateTitle = document.createElement("p");
-  dateTitle.classList.add("show__subheading");
-  dateTitle.innerText = "Date";
-  showsSection.appendChild(dateTitle);
+  dateTitle.classList.add("shows__subheading");
+  dateTitle.innerText = "DATE";
+  showContainer.appendChild(dateTitle);
 
   const showDate = document.createElement("p");
-  showDate.classList.add("show__info");
+  showDate.classList.add("shows__info");
+  showDate.classList.add("shows__info--highlight");
   showDate.innerText = show.date;
-  showsSection.appendChild(showDate);
+  showContainer.appendChild(showDate);
 
   const venueTitle = document.createElement("p");
-  venueTitle.classList.add("show__subheading");
-  venueTitle.innerText = "Venue";
-  showsSection.appendChild(venueTitle);
+  venueTitle.classList.add("shows__subheading");
+  venueTitle.innerText = "VENUE";
+  showContainer.appendChild(venueTitle);
 
   const showvenue = document.createElement("p");
-  showvenue.classList.add("show__info");
+  showvenue.classList.add("shows__info");
   showvenue.innerText = show.venue;
-  showsSection.appendChild(showvenue);
+  showContainer.appendChild(showvenue);
 
   const locationTitle = document.createElement("p");
-  locationTitle.classList.add("show__subheading");
-  locationTitle.innerText = "Location";
-  showsSection.appendChild(locationTitle);
+  locationTitle.classList.add("shows__subheading");
+  locationTitle.innerText = "LOCATION";
+  showContainer.appendChild(locationTitle);
 
   const showlocation = document.createElement("p");
-  showlocation.classList.add("show__info");
+  showlocation.classList.add("shows__info");
   showlocation.innerText = show.location;
-  showsSection.appendChild(showlocation);
+  showContainer.appendChild(showlocation);
+
+  const buyTicketsBtn = document.createElement("button");
+  buyTicketsBtn.classList.add("shows__btn");
+  buyTicketsBtn.innerText = "BUY TICKETS";
+  showContainer.appendChild(buyTicketsBtn);
 };
 
 const mainSection = document.querySelector(".shows");
