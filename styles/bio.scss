@@ -180,3 +180,15 @@
     }
   }
 }
+
+.comment-section {
+  padding: 0 1rem;
+
+  &__heading {
+    @include heading-padding;
+  }
+
+  &__avatar {
+    width: 2.5rem;
+  }
+}

@@ -34,7 +34,7 @@ displayShow = (show) => {
   showlocation.innerText = show.location;
   showContainer.appendChild(showlocation);
 
-  const buyTicketsBtn = document.createElement("button");
+  const buyTicketsBtn = document.createElement("a");
   buyTicketsBtn.classList.add("shows__btn");
   buyTicketsBtn.innerText = "BUY TICKETS";
   showContainer.appendChild(buyTicketsBtn);
