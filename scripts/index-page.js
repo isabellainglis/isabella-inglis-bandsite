@@ -53,7 +53,7 @@ let displayComments = () => {
     commentTop.appendChild(commentName);
 
     const commentDate = document.createElement("p");
-    commentDate.classList.add("comment-section__comment-Date");
+    commentDate.classList.add("comment-section__comment-date");
     commentDate.innerText = comment.date;
     commentTop.appendChild(commentDate);
 

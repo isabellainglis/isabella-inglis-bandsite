@@ -193,7 +193,11 @@
   }
 
   &__img {
-    width: 5rem;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 2.3rem;
   }
 
   &__form {
@@ -208,8 +212,33 @@
     padding: 1rem 0 0.3rem;
   }
 
+  &__input {
+    background-color: rgba(245, 245, 245, 0.817);
+    height: 2.5rem;
+    border-radius: 4px;
+    border: solid 1px $divider-color;
+    padding: 0.75rem;
+
+    &:focus {
+      outline: none;
+      border-color: $text-hover;
+    }
+
+    &::placeholder {
+      color: $primary-color;
+      font-size: 0.9rem;
+    }
+
+    &--comment {
+      height: 7rem;
+    }
+  }
+
   &__btn {
     @include button;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
   }
 
   &__comment-cards {
@@ -230,6 +259,15 @@
   &__comment-top {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__comment-name {
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+  }
+
+  &__comment-date {
+    color: $secondary-color;
   }
 
   &__comment-img {
