@@ -185,7 +185,7 @@
   padding: 0 1rem;
 
   &__heading {
-    @include heading-padding;
+    padding-top: 1rem;
   }
 
   &__form-container {

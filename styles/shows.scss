@@ -11,6 +11,8 @@
   &__overlay {
     @include hero-overlay;
     display: block;
+    padding-top: 2rem;
+    height: 32vh;
 
     @include tablet-and-above {
       height: 55vh;
@@ -23,10 +25,19 @@
 
   &__subheading {
     @include hero-heading;
+    padding-bottom: 1rem;
   }
 
   &__title {
     @include hero-heading;
+    max-width: 70%;
+  }
+
+  &__widget {
+    width: 90%;
+    max-width: 30rem;
+    height: 100;
+    margin-top: 0.7rem;
   }
 }
 
@@ -36,11 +47,11 @@
   }
 
   &__heading {
-    padding: 3rem 1.5rem 1rem;
+    padding: 2rem 1.5rem 0.5rem;
   }
 
   &__show-container {
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1rem;
     border-bottom: solid 1px $divider-color;
   }
 

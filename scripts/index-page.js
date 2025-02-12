@@ -92,6 +92,7 @@ formEl.addEventListener("submit", (event) => {
 
   comments.push(newComment);
   commentSection.innerHTML = "";
+  formEl.reset();
   displayComments();
 });
 
