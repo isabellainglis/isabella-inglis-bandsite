@@ -1,42 +1,3 @@
-let displayComments = (comment) => {
-  const commentSection = document.querySelector(".comment-section");
-
-  const commentCard = document.createElement("div");
-  commentCard.classList.add("comment-section__comment-card");
-  commentSection.appendChild(commentCard);
-
-  const commentImgContainer = document.createElement("div");
-  commentImgContainer.classList.add("comment-section__comment-img-container");
-  commentCard.appendChild(commentImgContainer);
-
-  const commentImg = document.createElement("img");
-  commentImg.classList.add("comment-section__comment-img");
-  commentImgContainer.appendChild(commentImg);
-
-  const commentContainer = document.createElement("div");
-  commentContainer.classList.add("comment-section__comment-container");
-  commentCard.appendChild(commentContainer);
-
-  const commentTop = document.createElement("div");
-  commentTop.classList.add("comment-section__comment-top");
-  commentContainer.appendChild(commentTop);
-
-  const commentName = document.createElement("p");
-  commentName.classList.add("comment-section__comment-name");
-  commentName.innerText = comment.name;
-  commentTop.appendChild(commentName);
-
-  const commentDate = document.createElement("p");
-  commentDate.classList.add("comment-section__comment-Date");
-  commentDate.innerText = comment.date;
-  commentTop.appendChild(commentDate);
-
-  const commentContent = document.createElement("p");
-  commentContent.classList.add("comment-section__comment-content");
-  commentContent.innerText = comment.content;
-  commentContainer.appendChild(commentContent);
-};
-
 const comments = [
   {
     name: "Victor Pinto",
@@ -58,8 +19,80 @@ const comments = [
   },
 ];
 
-for (let i = 0; i < comments.length; i++) {
-  const comment = comments[i];
+const commentSection = document.querySelector(
+  ".comment-section__comment-cards"
+);
 
-  displayComments(comment);
-}
+let displayComments = () => {
+  for (let i = 0; i < comments.length; i++) {
+    const comment = comments[i];
+
+    const commentCard = document.createElement("div");
+    commentCard.classList.add("comment-section__comment-card");
+    commentSection.appendChild(commentCard);
+
+    const commentImgContainer = document.createElement("div");
+    commentImgContainer.classList.add("comment-section__comment-img-container");
+    commentCard.appendChild(commentImgContainer);
+
+    const commentImg = document.createElement("div");
+    commentImg.classList.add("comment-section__comment-img");
+    commentImgContainer.appendChild(commentImg);
+
+    const commentContainer = document.createElement("div");
+    commentContainer.classList.add("comment-section__comment-container");
+    commentCard.appendChild(commentContainer);
+
+    const commentTop = document.createElement("div");
+    commentTop.classList.add("comment-section__comment-top");
+    commentContainer.appendChild(commentTop);
+
+    const commentName = document.createElement("p");
+    commentName.classList.add("comment-section__comment-name");
+    commentName.innerText = comment.name;
+    commentTop.appendChild(commentName);
+
+    const commentDate = document.createElement("p");
+    commentDate.classList.add("comment-section__comment-Date");
+    commentDate.innerText = comment.date;
+    commentTop.appendChild(commentDate);
+
+    const commentContent = document.createElement("p");
+    commentContent.classList.add("comment-section__comment-content");
+    commentContent.innerText = comment.content;
+    commentContainer.appendChild(commentContent);
+  }
+};
+
+const formEl = document.querySelector(".comment-section__form");
+
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const currentDate = new Date();
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth();
+  let year = currentDate.getFullYear();
+
+  if (day < 10) {
+    day = "0" + day;
+  }
+
+  if (month < 10) {
+    month = "0" + month;
+  }
+
+  let formattedDate = `${day}/${month}/${year}`;
+
+  const newComment = {
+    name: event.target.name.value,
+    content: event.target.content.value,
+    date: formattedDate,
+  };
+
+  comments.push(newComment);
+  commentSection.innerHTML = "";
+  displayComments();
+});
+
+displayComments();

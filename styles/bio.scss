@@ -212,11 +212,36 @@
     @include button;
   }
 
-  &__comment-card {
-    display: flex;
+  &__comment-cards {
+    border-top: solid 1px $divider-color;
+    margin: 1rem 0;
   }
 
-  &__commentContainer {
+  &__comment-card {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: solid 1px $divider-color;
+  }
+
+  &__comment-img-container {
+    width: 15%;
+  }
+
+  &__comment-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__comment-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: $divider-color;
+    border-radius: 100%;
+    margin: 0 auto;
+    margin-right: 16px;
+  }
+
+  &__comment-container {
     width: 80%;
   }
 }
