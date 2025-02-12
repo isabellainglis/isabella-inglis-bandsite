@@ -70,3 +70,8 @@
   border: none;
   text-align: center;
 }
+
+@mixin info-subheading {
+  color: $secondary-color;
+  font-size: 1rem;
+}

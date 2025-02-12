@@ -188,7 +188,35 @@
     @include heading-padding;
   }
 
-  &__avatar {
-    width: 2.5rem;
+  &__form-container {
+    display: flex;
+  }
+
+  &__img {
+    width: 5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 1rem;
+  }
+
+  &__form-label {
+    @include info-subheading;
+    padding: 1rem 0 0.3rem;
+  }
+
+  &__btn {
+    @include button;
+  }
+
+  &__comment-card {
+    display: flex;
+  }
+
+  &__commentContainer {
+    width: 80%;
   }
 }
