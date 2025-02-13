@@ -1,7 +1,7 @@
 displayShow = (show) => {
   const showContainer = document.createElement("div");
   showContainer.classList.add("shows__show-container");
-  showsSection.appendChild(showContainer);
+  showsSectionEl.appendChild(showContainer);
 
   const dateTitle = document.createElement("p");
   dateTitle.classList.add("shows__subheading");
@@ -40,10 +40,10 @@ displayShow = (show) => {
   showContainer.appendChild(buyTicketsBtn);
 };
 
-const mainSection = document.querySelector(".shows");
-const showsSection = document.createElement("section");
-showsSection.classList.add("shows__shows-section");
-mainSection.appendChild(showsSection);
+const showsContainerEl = document.querySelector(".shows__show-list-container");
+const showsSectionEl = document.createElement("section");
+showsSectionEl.classList.add("shows__shows-section");
+showsContainerEl.appendChild(showsSectionEl);
 
 const showDetails = [
   {

@@ -12,65 +12,163 @@
     @include hero-overlay;
     display: block;
     padding-top: 2rem;
-    height: 32vh;
+    height: 35vh;
 
     @include tablet-and-above {
-      height: 55vh;
+      height: 65vh;
     }
 
     @include desktop {
-      height: 70vh;
+      height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0;
+    }
+  }
+
+  &__text-container {
+    @include desktop {
+      width: 50%;
     }
   }
 
   &__subheading {
     @include hero-heading;
     padding-bottom: 1rem;
+
+    @include tablet-and-above {
+      margin-top: 1.5rem;
+    }
+
+    @include desktop {
+      padding-left: 0;
+    }
   }
 
   &__title {
     @include hero-heading;
     max-width: 70%;
+
+    @include tablet-and-above {
+      line-height: 1.2;
+    }
+
+    @include desktop {
+      width: 100%;
+      padding: 0;
+      min-width: 37.5rem;
+    }
   }
 
   &__widget {
-    width: 90%;
-    max-width: 30rem;
-    height: 100;
+    width: 95%;
+    max-width: 29rem;
     margin-top: 0.7rem;
+
+    @include tablet-and-above {
+      height: 8rem;
+      margin-top: 2.8rem;
+      padding-left: 24px;
+    }
   }
 }
 
 .shows {
+  @include desktop {
+    display: flex;
+  }
+
+  &__show-list-container {
+    @include desktop {
+      width: 75%;
+      margin: 3rem 5rem 1rem 0;
+    }
+  }
+
   &__shows-section {
     margin-bottom: 1.5rem;
   }
 
   &__heading {
     padding: 2rem 1.5rem 0.5rem;
+
+    @include tablet-and-above {
+      margin: 1.5rem 1.1rem 0;
+    }
+
+    @include desktop {
+      width: 25%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    justify-content: left;
+    padding: 2rem 1.5rem 1rem;
+    display: none;
+    margin-left: 1.5rem;
+
+    @include tablet-and-above {
+      display: flex;
+    }
+  }
+
+  &__list-item {
+    font-size: 0.8rem;
+    color: $secondary-color;
+    width: 24.8%;
   }
 
   &__show-container {
     padding: 1rem 1rem;
     border-bottom: solid 1px $divider-color;
+
+    @include tablet-and-above {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 1rem;
+    }
   }
 
   &__subheading {
     @include info-subheading;
+
+    @include tablet-and-above {
+      display: none;
+    }
   }
 
   &__info {
     padding: 0.8rem 0 1.2rem 0;
     font-size: 1.1rem;
+
+    @include tablet-and-above {
+      width: 24%;
+    }
   }
 
   &__info--highlight {
     font-weight: bold;
+
+    @include tablet-and-above {
+      padding-left: 0.4rem;
+    }
   }
 
   &__btn {
     @include button;
     width: 100%;
     margin-top: 1rem;
+
+    @include tablet-and-above {
+      width: 23%;
+      margin: 0;
+    }
+
+    @include desktop {
+      width: 18%;
+    }
   }
 }
