@@ -90,10 +90,37 @@ formEl.addEventListener("submit", (event) => {
     date: formattedDate,
   };
 
-  comments.push(newComment);
-  commentSection.innerHTML = "";
-  formEl.reset();
-  displayComments();
+  const errorEl = document.querySelector(".comment-section__error");
+  const nameInputEl = document.querySelector(".comment-section__input-name");
+  const commentInputEl = document.querySelector(
+    ".comment-section__input-comment"
+  );
+
+  if (
+    event.target.name.value.length === 0 &&
+    event.target.content.value.length === 0
+  ) {
+    errorEl.innerText = "Oops, looks like you haven't entered a name or email!";
+    nameInputEl.classList.add("comment-section__input-name--error");
+    commentInputEl.classList.add("comment-section__input-comment--error");
+  } else if (
+    event.target.name.value.length === 0 &&
+    event.target.content.value.length > 0
+  ) {
+    errorEl.innerText = "Oops, looks like you haven't entered a name!";
+    nameInputEl.classList.add("comment-section__input-name--error");
+  } else if (
+    event.target.name.value.length > 0 &&
+    event.target.content.value.length === 0
+  ) {
+    errorEl.innerText = "Oops, looks like you haven't entered a comment!";
+    commentInputEl.classList.add("comment-section__input-comment--error");
+  } else {
+    comments.push(newComment);
+    commentSection.innerHTML = "";
+    formEl.reset();
+    displayComments();
+  }
 });
 
 displayComments();

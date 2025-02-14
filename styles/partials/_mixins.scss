@@ -69,9 +69,27 @@
   border-radius: 5px;
   border: none;
   text-align: center;
+  cursor: pointer;
 }
 
 @mixin info-subheading {
   color: $secondary-color;
   font-size: 0.9rem;
+}
+
+@mixin input {
+  background-color: rgba(245, 245, 245, 0.817);
+  border-radius: 4px;
+  border: solid 1px $divider-color;
+  padding: 0.75rem;
+
+  &:focus {
+    outline: none;
+    border-color: $text-hover;
+  }
+
+  &::placeholder {
+    color: $primary-color;
+    font-size: 0.9rem;
+  }
 }
