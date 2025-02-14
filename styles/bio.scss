@@ -181,15 +181,33 @@
   }
 }
 
+.section-heading {
+  padding: 1rem 1rem 0.5rem;
+
+  @include tablet-and-above {
+    padding: 3rem 2rem 1rem;
+  }
+
+  @include desktop {
+    padding: 4rem 8rem 1rem;
+  }
+}
+
 .comment-section {
   padding: 0 1rem;
+  max-width: 65rem;
+  margin: 0 auto;
 
-  &__heading {
-    padding-top: 1rem;
+  @include tablet-and-above {
+    padding: 0 5rem;
   }
 
   &__form-container {
     display: flex;
+
+    @include tablet-and-above {
+      margin-left: 6.5rem;
+    }
   }
 
   &__img {
@@ -223,6 +241,7 @@
 
   &__input-comment {
     height: 7rem;
+    resize: none;
     @include input;
 
     &--error {
@@ -239,11 +258,22 @@
     width: 100%;
     padding: 0.5rem;
     margin-top: 1rem;
+
+    @include tablet-and-above {
+      width: 25%;
+      font-size: 1rem;
+      margin-right: 35px;
+    }
   }
 
   &__comment-cards {
     border-top: solid 1px $divider-color;
     margin: 1rem 0;
+
+    @include tablet-and-above {
+      margin: 1rem 6.5rem;
+      // min-width: 42rem;
+    }
   }
 
   &__comment-card {

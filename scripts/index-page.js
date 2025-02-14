@@ -69,27 +69,6 @@ const formEl = document.querySelector(".comment-section__form");
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const currentDate = new Date();
-  let day = currentDate.getDate();
-  let month = currentDate.getMonth();
-  let year = currentDate.getFullYear();
-
-  if (day < 10) {
-    day = "0" + day;
-  }
-
-  if (month < 10) {
-    month = "0" + month;
-  }
-
-  let formattedDate = `${day}/${month}/${year}`;
-
-  const newComment = {
-    name: event.target.name.value,
-    content: event.target.content.value,
-    date: formattedDate,
-  };
-
   const errorEl = document.querySelector(".comment-section__error");
   const nameInputEl = document.querySelector(".comment-section__input-name");
   const commentInputEl = document.querySelector(
@@ -100,7 +79,8 @@ formEl.addEventListener("submit", (event) => {
     event.target.name.value.length === 0 &&
     event.target.content.value.length === 0
   ) {
-    errorEl.innerText = "Oops, looks like you haven't entered a name or email!";
+    errorEl.innerText =
+      "Oops, looks like you haven't entered a name or comment!";
     nameInputEl.classList.add("comment-section__input-name--error");
     commentInputEl.classList.add("comment-section__input-comment--error");
   } else if (
@@ -116,7 +96,31 @@ formEl.addEventListener("submit", (event) => {
     errorEl.innerText = "Oops, looks like you haven't entered a comment!";
     commentInputEl.classList.add("comment-section__input-comment--error");
   } else {
+    const currentDate = new Date();
+    let day = currentDate.getDate();
+    let month = currentDate.getMonth();
+    let year = currentDate.getFullYear();
+
+    if (day < 10) {
+      day = "0" + day;
+    }
+
+    if (month < 10) {
+      month = "0" + month;
+    }
+
+    let formattedDate = `${day}/${month}/${year}`;
+
+    const newComment = {
+      name: event.target.name.value,
+      content: event.target.content.value,
+      date: formattedDate,
+    };
+
     comments.push(newComment);
+    errorEl.innerHTML = "";
+    nameInputEl.classList.remove("comment-section__input-name--error");
+    commentInputEl.classList.remove("comment-section__input-comment--error");
     commentSection.innerHTML = "";
     formEl.reset();
     displayComments();

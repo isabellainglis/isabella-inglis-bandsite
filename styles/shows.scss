@@ -113,12 +113,20 @@
     @include tablet-and-above {
       display: flex;
     }
+
+    @include desktop {
+      margin-left: 1.9rem;
+    }
   }
 
   &__list-item {
     font-size: 0.8rem;
     color: $secondary-color;
     width: 24.8%;
+
+    @include desktop {
+      width: 26.2%;
+    }
   }
 
   &__show-container {
@@ -165,10 +173,12 @@
     @include tablet-and-above {
       width: 23%;
       margin: 0;
+      padding: 0.7rem 0.6rem 0.6rem 0.6rem;
+      height: 50px;
     }
 
     @include desktop {
-      width: 18%;
+      width: 20%;
     }
   }
 }

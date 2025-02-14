@@ -213,6 +213,7 @@ a {
       justify-content: space-between;
       padding-bottom: 0;
       font-weight: light;
+      max-width: 1000px;
     }
 
     @include desktop {
@@ -250,6 +251,10 @@ a {
   &__text {
     @include tablet-and-above {
       line-height: 1.25rem;
+    }
+
+    &--email {
+      padding-top: 2rem;
     }
   }
 
