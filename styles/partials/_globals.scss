@@ -178,6 +178,10 @@ a {
       width: 100%;
       padding-top: 0;
     }
+
+    @include desktop {
+      padding-left: 1.4rem;
+    }
   }
 
   &__icon {
@@ -193,8 +197,10 @@ a {
   }
 
   &__logo {
+    max-height: 1.25rem;
+    max-width: 7.5rem;
     position: relative;
-    top: 30rem;
+    top: 32rem;
     width: 120px;
     height: 20px;
 
@@ -210,20 +216,22 @@ a {
     @include tablet-and-above {
       display: flex;
       text-align: center;
-      justify-content: space-between;
+      justify-content: space-evenly;
       padding-bottom: 0;
       font-weight: light;
-      max-width: 1000px;
-    }
-
-    @include desktop {
-      justify-content: left;
+      max-width: 800px;
+      min-width: 650px;
     }
   }
 
   &__text-container {
     text-align: left;
     padding: 0.5rem 0;
+
+    @include tablet-and-above {
+      padding-right: 2rem;
+      text-wrap: nowrap;
+    }
 
     @include desktop {
       padding-right: 5rem;
@@ -268,11 +276,6 @@ a {
 
   &__link {
     color: $tertiary-color;
-  }
-
-  &__logo {
-    max-height: 1.25rem;
-    max-width: 7.5rem;
   }
 
   &__copyright {

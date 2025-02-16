@@ -117,7 +117,7 @@ formEl.addEventListener("submit", (event) => {
       date: formattedDate,
     };
 
-    comments.push(newComment);
+    comments.unshift(newComment);
     errorEl.innerHTML = "";
     nameInputEl.classList.remove("comment-section__input-name--error");
     commentInputEl.classList.remove("comment-section__input-comment--error");
