@@ -61,6 +61,16 @@ formEl.addEventListener("submit", async (event) => {
     ".comment-section__input-comment"
   );
 
+  if (nameInputEl.classList.contains("comment-section__input-name--error")) {
+    nameInputEl.classList.remove("comment-section__input-name--error");
+  }
+
+  if (
+    commentInputEl.classList.contains("comment-section__input-comment--error")
+  ) {
+    commentInputEl.classList.remove("comment-section__input-comment--error");
+  }
+
   if (
     event.target.name.value.length === 0 &&
     event.target.content.value.length === 0

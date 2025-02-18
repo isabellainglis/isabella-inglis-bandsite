@@ -10,7 +10,12 @@ class BandSiteApi {
     const comments = await axios.get(
       `${this.baseUrl}comments?api_key=${this.apiKey}`
     );
-    return comments.data;
+
+    const sortedComments = comments.data.sort(
+      (comment1, comment2) => comment2.timestamp - comment1.timestamp
+    );
+
+    return sortedComments;
   }
 
   async postComment(comment) {
@@ -19,5 +24,13 @@ class BandSiteApi {
       comment
     );
     return newComment.data;
+  }
+
+  async getShows() {
+    const shows = await axios.get(
+      `${this.baseUrl}showdates?api_key=${this.apiKey}`
+    );
+
+    return shows.data;
   }
 }
