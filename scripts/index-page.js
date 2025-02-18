@@ -1,25 +1,4 @@
-const apiKey = "d07d1e8d-6301-4bcf-b713-53d5ff9dedc5";
-
-class BandSiteApi {
-  constructor(apiKey) {
-    this.apiKey = apiKey;
-    this.baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
-  }
-
-  async getComments() {
-    const comments = await axios.get(
-      `${this.baseUrl}comments?api_key=${this.apiKey}`
-    );
-    return comments.data;
-  }
-
-  async postComment(comment) {
-    const newComment = await axios.post(comment);
-    return newComment.data;
-  }
-}
-
-const bandsiteApi = new BandSiteApi(apiKey);
+const bandsiteApi = new BandSiteApi(API_KEY);
 
 const commentSection = document.querySelector(
   ".comment-section__comment-cards"
@@ -76,7 +55,6 @@ const formEl = document.querySelector(".comment-section__form");
 formEl.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const comments = await bandsiteApi.getComments();
   const errorEl = document.querySelector(".comment-section__error");
   const nameInputEl = document.querySelector(".comment-section__input-name");
   const commentInputEl = document.querySelector(
@@ -104,16 +82,12 @@ formEl.addEventListener("submit", async (event) => {
     errorEl.innerText = "Oops, looks like you haven't entered a comment!";
     commentInputEl.classList.add("comment-section__input-comment--error");
   } else {
-    const currentDate = new Date();
-    let formattedDate = currentDate.toLocaleDateString();
-
     const newComment = {
       name: event.target.name.value,
-      content: event.target.content.value,
-      date: formattedDate,
+      comment: event.target.content.value,
     };
 
-    comments.unshift(newComment);
+    await bandsiteApi.postComment(newComment);
     errorEl.innerHTML = "";
     nameInputEl.classList.remove("comment-section__input-name--error");
     commentInputEl.classList.remove("comment-section__input-comment--error");
