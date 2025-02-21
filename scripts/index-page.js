@@ -60,6 +60,8 @@ formEl.addEventListener("submit", async (event) => {
   const commentInputEl = document.querySelector(
     ".comment-section__input-comment"
   );
+  const name = event.target.name.value;
+  const comment = event.target.content.value;
 
   if (nameInputEl.classList.contains("comment-section__input-name--error")) {
     nameInputEl.classList.remove("comment-section__input-name--error");
@@ -71,30 +73,21 @@ formEl.addEventListener("submit", async (event) => {
     commentInputEl.classList.remove("comment-section__input-comment--error");
   }
 
-  if (
-    event.target.name.value.length === 0 &&
-    event.target.content.value.length === 0
-  ) {
+  if (name.length === 0 && comment.length === 0) {
     errorEl.innerText =
       "Oops, looks like you haven't entered a name or comment!";
     nameInputEl.classList.add("comment-section__input-name--error");
     commentInputEl.classList.add("comment-section__input-comment--error");
-  } else if (
-    event.target.name.value.length === 0 &&
-    event.target.content.value.length > 0
-  ) {
+  } else if (name.length === 0 && comment.length > 0) {
     errorEl.innerText = "Oops, looks like you haven't entered a name!";
     nameInputEl.classList.add("comment-section__input-name--error");
-  } else if (
-    event.target.name.value.length > 0 &&
-    event.target.content.value.length === 0
-  ) {
+  } else if (name.length > 0 && comment.length === 0) {
     errorEl.innerText = "Oops, looks like you haven't entered a comment!";
     commentInputEl.classList.add("comment-section__input-comment--error");
   } else {
     const newComment = {
-      name: event.target.name.value,
-      comment: event.target.content.value,
+      name: name,
+      comment: comment,
     };
 
     await bandsiteApi.postComment(newComment);
