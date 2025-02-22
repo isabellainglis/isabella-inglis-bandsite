@@ -39,4 +39,8 @@ class BandSiteApi {
       `${this.baseUrl}comments/${id}/like?api_key=${this.apiKey}`
     );
   }
+
+  async deleteComment(id) {
+    await axios.delete(`${this.baseUrl}comments/${id}?api_key=${this.apiKey}`);
+  }
 }

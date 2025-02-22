@@ -5,6 +5,7 @@ const commentSection = document.querySelector(
 );
 
 const displayComments = async () => {
+  commentSection.innerHTML = "";
   const comments = await bandsiteApi.getComments();
 
   for (let i = 0; i < comments.length; i++) {
@@ -53,8 +54,10 @@ const displayComments = async () => {
     likeContainerParent.classList.add("comment-section__like-container-parent");
     commentContainer.appendChild(likeContainerParent);
 
-    const deleteBtn = document.createElement("div");
+    const deleteBtn = document.createElement("img");
     deleteBtn.classList.add("comment-section__delete-btn");
+    deleteBtn.src = "../assets/icons/SVG/icon-delete.svg";
+    deleteBtn.alt = "delete comment";
     likeContainerParent.appendChild(deleteBtn);
 
     const likeContainer = document.createElement("div");
@@ -64,7 +67,7 @@ const displayComments = async () => {
     const likeBtn = document.createElement("img");
     likeBtn.classList.add("comment-section__like-btn");
     likeBtn.src = "../assets/icons/PNG/icon-heart-white.png";
-    likeBtn.alt = "like button";
+    likeBtn.alt = "like comment";
     likeContainer.appendChild(likeBtn);
 
     const likeCountEl = document.createElement("div");
@@ -74,6 +77,7 @@ const displayComments = async () => {
   }
 
   enableLikeCount(comments);
+  enableDelete(comments);
 };
 
 const formEl = document.querySelector(".comment-section__form");
@@ -121,7 +125,6 @@ formEl.addEventListener("submit", async (event) => {
     nameInputEl.classList.remove("comment-section__input-name--error");
     commentInputEl.classList.remove("comment-section__input-comment--error");
     formEl.reset();
-    commentSection.innerHTML = "";
     displayComments();
   }
 });

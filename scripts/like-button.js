@@ -13,8 +13,7 @@ const enableLikeCount = (comments) => {
   likeBtnElements.forEach((likeBtnEl, index) => {
     let clicked = false;
 
-    likeBtnEl.addEventListener("click", (event) => {
-      event.preventDefault();
+    likeBtnEl.addEventListener("click", () => {
       if (clicked) {
         return;
       }

@@ -138,6 +138,10 @@
       justify-content: space-evenly;
       margin: 0 1rem;
     }
+
+    &:hover {
+      background-color: $tertiary-color-alt;
+    }
   }
 
   &__subheading {
