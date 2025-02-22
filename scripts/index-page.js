@@ -12,6 +12,7 @@ const displayComments = async () => {
     const date = new Date(comment.timestamp).toLocaleDateString();
     const userName = comment.name;
     const userComment = comment.comment;
+    const likeCount = comment.likes;
 
     const commentCard = document.createElement("div");
     commentCard.classList.add("comment-section__comment-card");
@@ -47,7 +48,32 @@ const displayComments = async () => {
     commentContent.classList.add("comment-section__comment-content");
     commentContent.innerText = userComment;
     commentContainer.appendChild(commentContent);
+
+    const likeContainerParent = document.createElement("div");
+    likeContainerParent.classList.add("comment-section__like-container-parent");
+    commentContainer.appendChild(likeContainerParent);
+
+    const deleteBtn = document.createElement("div");
+    deleteBtn.classList.add("comment-section__delete-btn");
+    likeContainerParent.appendChild(deleteBtn);
+
+    const likeContainer = document.createElement("div");
+    likeContainer.classList.add("comment-section__like-container");
+    likeContainerParent.appendChild(likeContainer);
+
+    const likeBtn = document.createElement("img");
+    likeBtn.classList.add("comment-section__like-btn");
+    likeBtn.src = "../assets/icons/PNG/icon-heart-white.png";
+    likeBtn.alt = "like button";
+    likeContainer.appendChild(likeBtn);
+
+    const likeCountEl = document.createElement("div");
+    likeCountEl.classList.add("comment-section__like-counter");
+    likeCountEl.innerText = likeCount;
+    likeContainer.appendChild(likeCountEl);
   }
+
+  enableLikeCount(comments);
 };
 
 const formEl = document.querySelector(".comment-section__form");
@@ -94,8 +120,8 @@ formEl.addEventListener("submit", async (event) => {
     errorEl.innerHTML = "";
     nameInputEl.classList.remove("comment-section__input-name--error");
     commentInputEl.classList.remove("comment-section__input-comment--error");
-    commentSection.innerHTML = "";
     formEl.reset();
+    commentSection.innerHTML = "";
     displayComments();
   }
 });

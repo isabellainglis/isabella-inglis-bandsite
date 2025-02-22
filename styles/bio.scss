@@ -312,4 +312,25 @@
   &__comment-container {
     width: 80%;
   }
+
+  &__like-container-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__like-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__like-counter {
+    text-align: center;
+  }
+
+  &__like-btn {
+    width: 22px;
+    cursor: pointer;
+  }
 }
