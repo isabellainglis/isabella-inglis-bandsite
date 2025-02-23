@@ -52,6 +52,24 @@ const displayShow = async () => {
     buyTicketsBtn.innerText = "BUY TICKETS";
     showContainer.appendChild(buyTicketsBtn);
   }
+
+  addShowSelector();
 };
 
 displayShow();
+
+const addShowSelector = () => {
+  const showContainer = document.querySelectorAll(".shows__show-container");
+  let currentlySelected = null;
+
+  showContainer.forEach((show) => {
+    show.addEventListener("click", () => {
+      if (currentlySelected) {
+        currentlySelected.classList.remove("shows__show-container--selected");
+      }
+
+      show.classList.add("shows__show-container--selected");
+      currentlySelected = show;
+    });
+  });
+};

@@ -1,8 +1,8 @@
 const updateLikeCount = (commentLikes, index) => {
-  const likeCountEl = document.querySelectorAll(
+  const likeCountElements = document.querySelectorAll(
     ".comment-section__like-counter"
   )[index];
-  likeCountEl.innerText = commentLikes + 1;
+  likeCountElements.innerText = commentLikes + 1;
 };
 
 const enableLikeCount = (comments) => {
@@ -14,15 +14,16 @@ const enableLikeCount = (comments) => {
     let clicked = false;
 
     likeBtnEl.addEventListener("click", () => {
+      const commentId = comments[index].id;
+
       if (clicked) {
         return;
       }
-      const commentId = comments[index].id;
 
       try {
         bandsiteApi.likeComment(commentId);
         const commentLikes = comments[index].likes;
-        updateLikeCount(commentLikes, index, likeBtnEl);
+        updateLikeCount(commentLikes, index);
         likeBtnEl.src = "../assets/icons/PNG/icon-heart-red.png";
         clicked = true;
       } catch (error) {
